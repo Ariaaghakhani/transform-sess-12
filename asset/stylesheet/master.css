@@ -1,0 +1,67 @@
+body {
+  width: 100%;
+  background: url(../img/back.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+body .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+}
+body .grid > .box1:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateX(20deg) rotateY(-20deg);
+}
+body .grid .box2:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateX(20deg);
+}
+body .grid .box3:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateX(20deg) rotateY(20deg);
+}
+body .grid .box4:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateY(-20deg);
+}
+body .grid .box6:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateY(20deg);
+}
+body .grid .box7:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateX(-20deg) rotateY(-20deg);
+}
+body .grid .box8:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateX(-20deg);
+}
+body .grid .box9:hover ~ .box10 > .front {
+  transform: perspective(800px) rotateX(-20deg) rotateY(20deg);
+}
+body .grid .box10 {
+  background-color: #fff;
+}
+body .grid .box10 > .front {
+  width: 33.3333333333%;
+  height: 33.3333333333%;
+  background-image: url(../img/5.jpg);
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  overflow: hidden;
+  filter: blur(5px) grayscale(0.2);
+  transition: 1.2s ease;
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 33.3333333333%;
+  left: 33.3333333333%;
+}
+body .grid .box10 > .back {
+  position: absolute;
+  top: 33.3333333333%;
+  left: 33.3333333333%;
+  filter: grayscale(1);
+  transform: translateZ(-10px);
+}
+body .grid .box10 > .back:hover {
+  transform: rotateY(180deg);
+}/*# sourceMappingURL=master.css.map */

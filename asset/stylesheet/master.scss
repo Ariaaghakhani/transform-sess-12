@@ -1,0 +1,110 @@
+body {
+    width: 100%;
+    // height: 100vh;
+    background: url(../img/back.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform-style: preserve-3d;
+
+        >.box1 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateX(20deg) rotateY(-20deg);
+            }
+        }
+
+        .box2 {
+
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateX(20deg);
+            }
+
+        }
+
+        .box3 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateX(20deg) rotateY(20deg);
+            }
+        }
+
+        .box4 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateY(-20deg);
+            }
+        }
+
+        .box6 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateY(20deg);
+            }
+        }
+
+        .box7 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateX(-20deg) rotateY(-20deg);
+            }
+        }
+
+        .box8 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateX(-20deg);
+            }
+        }
+
+        .box9 {
+            &:hover~.box10>.front{
+                transform: perspective(800px) rotateX(-20deg) rotateY(20deg);
+            }
+        }
+
+        .box10 {
+            
+            // &:hover{
+            //     transition: .2s;
+            //     transform: perspective(800px) rotateY(180deg);
+            // }
+            
+          background-color: #fff;
+            >.front {
+                // border: 10px solid black;
+                // display: grid;
+                // grid-column: 2 / span 1;
+                // grid-row: 2 / span 1;
+                width: calc(100% / 3);
+                height: calc(100% / 3);
+                background-image: url(../img/5.jpg);
+                background-color: rgb(255, 255, 255);
+                background-size: cover;
+                overflow: hidden;
+                filter: blur(5px) grayscale(0.2);
+                transition: 1.2s ease;
+                box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.5);
+                position: absolute;
+                top: calc(100% / 3);
+                left: calc(100% / 3);
+            }
+
+            >.back {
+                
+                position: absolute;
+                top: calc(100% / 3);
+                left: calc(100% / 3);
+                filter: grayscale(1);
+                transform: translateZ(-10px);
+                // transition: 1.2s ease;
+                &:hover{
+                    transform: rotateY(180deg);
+                }
+                
+            }
+        }
+    }
+}
